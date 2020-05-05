@@ -28,7 +28,9 @@ body {
   grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
   grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
   margin: 20px auto;
-  width: 800px;
+  width: 802px;
+  border: 5px solid #18A999;
+  border-radius: 5px;
 }
 
 .etch-square {
@@ -36,8 +38,4 @@ body {
   width: 50px;
   height: 50px;
   border: 1px solid black;
-}
-
-.etch-square:hover {
-  background-color: black;
 }

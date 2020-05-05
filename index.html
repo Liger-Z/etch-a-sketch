@@ -21,10 +21,14 @@
       for (i = 0; i < 16 * 16; i++) {
         let etchSquare = document.createElement("div");
         etchSquare.classList.add('etch-square');
+        etchSquare.addEventListener('mouseenter', (e) => {
+          e.target.style.background = 'black';
+        });
+
         etchContainer.appendChild(etchSquare);
       }
 
-      
+
     </script>
   </body>
 </html>
