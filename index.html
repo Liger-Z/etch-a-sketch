@@ -14,5 +14,17 @@
 
     <div class="etch-container">
     </div>
+
+    <script>
+      const etchContainer = document.querySelector(".etch-container");
+      
+      for (i = 0; i < 16 * 16; i++) {
+        let etchSquare = document.createElement("div");
+        etchSquare.classList.add('etch-square');
+        etchContainer.appendChild(etchSquare);
+      }
+
+      
+    </script>
   </body>
 </html>
