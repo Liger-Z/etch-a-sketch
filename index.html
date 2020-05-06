@@ -14,12 +14,34 @@
     
     <div class="button-container">
       <button id="clear-button">Clear</button>
+      <button id="new-grid-button">New Grid</button>
     </div>
     
     <div class="etch-container">
     </div>
 
     <script>
+      function createGrid(n) {
+        let etchContainer = document.querySelector(".etch-container");
+      
+        for (i = 0; i < n * n; i++) {
+          let etchSquare = document.createElement("div");
+          let dimension = 800 / n
+          if (n >= 100) {
+            etchSquare.style.border = '1px solid transparent'
+          }
+          etchSquare.classList.add('etch-square');
+          etchSquare.style.boxSizing = 'border-box'
+          etchSquare.style.width = `${dimension}px`
+          etchSquare.style.height = `${dimension}px`
+          etchSquare.addEventListener('mouseenter', (e) => {
+            e.target.style.background = 'black';
+          });
+        
+          etchContainer.appendChild(etchSquare);
+        }
+      }
+
       function clearGrid() {
         let etchSquares = document.querySelectorAll(".etch-square");
         etchSquares.forEach((square) => {
@@ -27,20 +49,20 @@
         });
       }
 
-      const etchContainer = document.querySelector(".etch-container");
-      
-      for (i = 0; i < 16 * 16; i++) {
-        let etchSquare = document.createElement("div");
-        etchSquare.classList.add('etch-square');
-        etchSquare.addEventListener('mouseenter', (e) => {
-          e.target.style.background = 'black';
-        });
-
-        etchContainer.appendChild(etchSquare);
+      function newGrid() {
+        gridDimension = prompt('Enter the new grid size (e.g. 20 for a 20x20 grid)');
+        oldGrid = document.querySelector(".etch-container");
+        while (oldGrid.firstChild) {
+          oldGrid.removeChild(oldGrid.lastChild);
+        }
+        createGrid(gridDimension);
       }
 
+      createGrid(16);
       const clearButton = document.querySelector("#clear-button");
+      const newGridButton = document.querySelector("#new-grid-button");
       clearButton.addEventListener('click', clearGrid);
+      newGridButton.addEventListener('click', newGrid);
     </script>
   </body>
 </html>
