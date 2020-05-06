@@ -29,7 +29,7 @@
       
         for (i = 0; i < n * n; i++) {
           let etchSquare = document.createElement("div");
-          let dimension = 600 / n
+          let dimension = Math.floor(600 / n * 100) / 100
           if (n >= 100) {
             etchSquare.style.border = '1px solid transparent'
           }
@@ -68,7 +68,7 @@
       function rainbowMode() {
         let etchSquares = document.querySelectorAll(".etch-square");
         etchSquares.forEach((square) => {
-          square.addEventListener('mouseenter', (e) => {
+          square.addEventListener('mouseenter', function rainbowEvent(e) {
             e.target.style.opacity = "1";
             e.target.style.background = `rgb(${randomRGBValue()}, ${randomRGBValue()}, ${randomRGBValue()})`;
           });
@@ -78,7 +78,7 @@
       function blackMode() {
         let etchSquares = document.querySelectorAll(".etch-square");
         etchSquares.forEach((square) => {
-          square.addEventListener('mouseenter', (e) => {
+          square.addEventListener('mouseenter', function blackEvent(e) {
             e.target.style.opacity = "1";
             e.target.style.background = 'black'
           });
@@ -89,7 +89,7 @@
         let etchSquares = document.querySelectorAll(".etch-square");
         let opacity = 0;
         etchSquares.forEach((square) => {
-          square.addEventListener('mouseenter', (e) => {
+          square.addEventListener('mouseenter', function greyEvent(e) {
             e.target.style.background = 'rgb(0,0,0)';
             if (e.target.style.opacity === '') {
               e.target.style.opacity = '0.1';
