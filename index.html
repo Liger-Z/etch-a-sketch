@@ -20,6 +20,13 @@
     </div>
 
     <script>
+      function clearGrid() {
+        let etchSquares = document.querySelectorAll(".etch-square");
+        etchSquares.forEach((square) => {
+          square.style.background = 'white';
+        });
+      }
+
       const etchContainer = document.querySelector(".etch-container");
       
       for (i = 0; i < 16 * 16; i++) {
@@ -32,7 +39,8 @@
         etchContainer.appendChild(etchSquare);
       }
 
-
+      const clearButton = document.querySelector("#clear-button");
+      clearButton.addEventListener('click', clearGrid);
     </script>
   </body>
 </html>
