@@ -4,7 +4,6 @@ html {
   font-family: "Verdana";
 }
 
-
 body {
   padding: 0;
   margin: 0;
@@ -26,8 +25,8 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   margin: 20px auto;
-  width: 800px;
-  height: 800px;
+  width: 600px;
+  height: 600px;
   border: 5px solid #8AF3FF;
   border-radius: 5px;
 }
@@ -52,7 +51,7 @@ button {
   color: #F7F0F0;
   font-size: 24px;
   padding: 3px 12px;
-  margin: 0 20px;
+  margin: 0 10px;
 }
 
 button:hover {
