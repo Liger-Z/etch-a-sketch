@@ -15,8 +15,9 @@
     <div class="button-container">
       <button id="clear-button">Clear</button>
       <button id="new-grid-button">New Grid</button>
-      <button id="rainbow-button">Rainbow Mode</button>
-      <button id="black-button">Black Mode</button>
+      <button id="rainbow-button">Rainbow</button>
+      <button id="black-button">Black</button>
+      <button id="greyscale-button">Greyscale</button>
     </div>
     
     <div class="etch-container">
@@ -82,15 +83,28 @@
         });
       }
 
+      function greyScaleMode() {
+        let etchSquares = document.querySelectorAll(".etch-square");
+        let opacity = 0;
+        etchSquares.forEach((square) => {
+          square.addEventListener('mouseenter', (e) => {
+            opacity += 0.1;
+            e.target.style.background = `rgba(0,0,0,${opacity})`;
+          });
+        });
+      }
+
       createGrid(16);
       const clearButton = document.querySelector("#clear-button");
       const newGridButton = document.querySelector("#new-grid-button");
       const rainbowButton = document.querySelector("#rainbow-button");
       const blackButton = document.querySelector("#black-button");
+      const greyScaleButton = document.querySelector("#greyscale-button");
       clearButton.addEventListener('click', clearGrid);
       newGridButton.addEventListener('click', newGrid);
       rainbowButton.addEventListener('click', rainbowMode);
       blackButton.addEventListener('click', blackMode);
+      greyScaleButton.addEventListener('click', greyScaleMode);
     </script>
   </body>
 </html>
